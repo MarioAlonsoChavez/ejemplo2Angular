@@ -1,45 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-interface AlumnosUtl{
-nombre:string;
-edad:number;
-}
+import { AlumnosUtl } from '../interfaces/utl.interface';
+import { UtlService } from '../service/utl.service';
+
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
-})
+}
+)
+
+
 
 export class MainPageComponent {
-alumnosUtl:AlumnosUtl[]=[
-  {
-  nombre:'Mario',
-  edad:15,
-  },
-  {
-    nombre:'lucia',
-    edad:15,
-  },
-  {
-    nombre:'Leonardo',
-    edad:21,
-  },
-  {
-    nombre:'Littzy mi amor',
-    edad:21
-  }
-]
 
-regAlumno:AlumnosUtl={
-  nombre:'',
-  edad:0
-}
-
-agregar(){
-  //console.log(this.AlumnosUtl)
-  this.alumnosUtl.push(this.regAlumno);
-  this.regAlumno={
+  regAlum={
     nombre:'',
     edad:0
   }
-}
+
+constructor(private utlService:UtlService){}
+
+/*agregarNuevoAlumno(datos:AlumnosUtl){
+  this.alumnosUtl.push(datos);
+  this.utlService.mostrarSaludo();*/
+  
 }
