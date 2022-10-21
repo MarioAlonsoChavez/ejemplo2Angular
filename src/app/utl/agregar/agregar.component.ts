@@ -10,18 +10,23 @@ import { UtlService } from '../service/utl.service';
 export class AgregarComponent {
 
   /*@Input() alumnosUtl:AlumnosUtl[]=[];*/
-  @Input() regAlum:AlumnosUtl={
+  @Input() regAlumno:AlumnosUtl={
     nombre:'',
     edad:0
   }
 
-  @Output()onNuevoAlumnos:EventEmitter<AlumnosUtl>=new EventEmitter();
+  //@Output()onNuevoAlumnos:EventEmitter<AlumnosUtl>=new EventEmitter();
 
   constructor(private UtlService:UtlService){}
 
   agregar(){
-    //console.log(this.AlumnosUtl)
+    console.log(this.regAlumno)
     //this.alumnosUtl.push(this.regAlum);
-    this.onNuevoAlumnos.emit(this.regAlum);
+    //this.onNuevoAlumnos.emit(this.regAlum);
+    this.UtlService.agregarAlumno(this.regAlumno);
+    this.regAlumno={
+      nombre:'',
+      edad:0
+    }
   }
 }

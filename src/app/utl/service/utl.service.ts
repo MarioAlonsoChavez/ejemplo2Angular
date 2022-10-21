@@ -38,6 +38,7 @@ export class UtlService {
   }
 
   constructor() { }
+  
   agregarAlumno(alumno:AlumnosUtl){
     this._alumnosUtl.push(alumno);
   }

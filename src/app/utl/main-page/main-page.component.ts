@@ -14,12 +14,12 @@ import { UtlService } from '../service/utl.service';
 
 export class MainPageComponent {
 
-  regAlum={
+  regAlumno:AlumnosUtl={
     nombre:'',
     edad:0
   }
 
-constructor(private utlService:UtlService){}
+constructor(){}
 
 /*agregarNuevoAlumno(datos:AlumnosUtl){
   this.alumnosUtl.push(datos);
